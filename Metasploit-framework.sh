@@ -23,6 +23,8 @@ while [ $count -lt $total ]; do
   printf "\r%3d.%1d%% %.${pd}s" $(( $count * 100 / $total )) $(( ($count * 1000 / $total) % 10 )) $pstr
 done
 sleep 3
+echo " "
+echo " "
 
 read -n 1 -r -s -p $'Press enter to Download pkgs...\n'
 
@@ -61,8 +63,77 @@ echo -e "
 
 echo " "
 echo " "
+echo -e "$pink Please! wait setup.."
+sleep 9.5
+echo " "
+echo " "
+echo "$ylo setup done.."
+echo " "
+read -n 1 -r -s -p $'Press enter to continue...\n'
+clear
 
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \ chmod 755 msfinstall && \ ./msfinstall
+rm -rif 4.17.14.tar.gz
+rm -rif metasploit.sh
+rm -rif metasploit-framework
+clear
+echo " "                                                                                   echo " "
+echo -e $red "™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™"
+echo -e $green
+figlet "Start Install"
+echo
+echo -e $red "™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™™"
+echo -e $white
+apt update && apt upgrade -y
+y
+apt install git
+y
+pkg install python3
+y
+pkg install python
+y
+apt install ruby
+y
+apt install wget
+y
+apt install unzip
+y                                                                                       apt install zip                                                                         y
+apt install nano
+y
+apt install perl
+y
+apt install curl
+y
+apt install proot
+y
+cd $HOME                                                                                wget https://Auxilus.github.io/metasploit.sh
+bash metasploit.sh
+cd $HOME
+cd metasploit-framework
+gem install bundle
+pkg install bundle
+apt install bundle                                                                      gem install bundler
+pip2 install bundler
+pip2 install bundle
+gem install bundle
+bundle config build.nokogiri --use-system-libraries
+bundle install
+bundle update nokogiri
+gem install nokogiri
+gem install nokogiri -- --use-system-libraries
+gem install pkg-config -v ~> 1.1
+pkg-config
+bundle update nokogiri
+pg_ctl -D $PREFIX/var/lib/postgresql start
+clear
+echo
+echo
+echo
+echo -e $yellow
+figlet "Completed"
+echo
+cd $HOME
+cd metasploit-framework
+./msfconsole
 
 echo -e "$red installization complete"
 
@@ -73,8 +144,6 @@ echo -e "$grn
                        ____  _  _  ____    ____  _  _  ____ 
                       (  _ \( \/ )( ___)  (  _ \( \/ )( ___)
                       ) _ < \  /  )__)    ) _ < \  /  )__) 
-                      (____/ (__) (____)  (____/ (__) (____).wesome day$rset"
+                      (____/ (__) (____)  (____/ (__) (____).Awesome day$rset"
 echo " "
 echo " "
-exit 1
-end
